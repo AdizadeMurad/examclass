@@ -1,0 +1,13 @@
+.cards {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 300px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
