@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { useState,useEffect } from 'react';
 import "./Home.scss"
+import { MainContext } from '../context/MainProvider';
 function Home() {
 const [mydata, setmydata] = useState([])
 
+
+const {AddBasket,RemoveBasket} = useContext(MainContext);
 
 useEffect(() => {
     getAllproducts()
@@ -32,12 +35,13 @@ async function getAllproducts() {
 <div className='cards'>
 {
     mydata.map((x)=> {
-      console.log(x);
         return <> 
-        <div className='card'>
+        <div className='card'  key={x._id}>
             <h2>{x.name}</h2>
             <p>{x.surname}</p>
             <p>{x.age}</p>
+            <button onClick={() => AddBasket(x)}>Add Basket</button>
+            <button onClick={() => RemoveBasket(x)}>Remove Basket</button>
           </div>  
            </>
    })

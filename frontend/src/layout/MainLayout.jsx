@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Outlet } from 'react-router-dom'
 
-function MainProvider() {
+function MainLayout() {
   return (
 <>
 <Navbar></Navbar>
@@ -11,4 +11,4 @@ function MainProvider() {
   )
 }
 
-export default MainProvider
+export default MainLayout
